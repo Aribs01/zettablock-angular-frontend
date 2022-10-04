@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-boilerplate": {
+    "Zettablock-Angular-Frontend": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ng-boilerplate",
+            "outputPath": "dist/Zettablock-Angular-Frontend",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ng-boilerplate:build:production"
+              "browserTarget": "Zettablock-Angular-Frontend:build:production"
             },
             "development": {
-              "browserTarget": "ng-boilerplate:build:development"
+              "browserTarget": "Zettablock-Angular-Frontend:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng-boilerplate:build"
+            "browserTarget": "Zettablock-Angular-Frontend:build"
           }
         },
         "test": {
@@ -107,5 +107,5 @@
       }
     }
   },
-  "defaultProject": "ng-boilerplate"
+  "defaultProject": "Zettablock-Angular-Frontend"
 }
