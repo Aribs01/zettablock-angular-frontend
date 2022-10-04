@@ -1,0 +1,54 @@
+
+<div class="api-page">
+    <div>
+        <div class="page-header">API TABLE DATA</div>
+        <div>
+            <input type="search"  [(ngModel)]="search" />
+
+            
+        </div>
+    </div>
+    
+    <div class="page-table">
+        <div class="table-headers">
+            <div style="width: 10px;">ID</div>
+            <div style="width: 100px;">Name</div>
+            <div style="width: 10px;">Type</div>
+            <div style="width: 100px;">Created At</div>
+            <div style="width: 100px;">Updated At</div>
+            <div style="width: 100px;">Action</div>
+        </div>
+        
+        <div *ngFor="let item of (currentRows | filter:search ); let i = index">
+            <div class="table-content" (click)="viewMoreAction()">
+                <div style="width: 10px;">{{item.id}}</div>
+                <div style="width: 100px;">{{item.name}}</div>
+                <div style="width: 10px;">{{item.type}}</div>
+                <div style="width: 100px;">{{item.createdAt | date: "mediumDate"}}</div>
+                <div style="width: 100px;">{{item.updatedAt | date: "mediumDate"}}</div>
+                <div>
+                    <button class="table-action-button" (click)="editApiDescription(item)">Delete</button>
+                    <button class="table-action-button" (click)="deleteApiData(item)">Delete</button>
+                </div>
+            </div>
+            <div class="table-description" *ngIf="more[i] == true">
+                Description : {{item.description}}
+            </div>
+            <div class="table-description" *ngIf="apiDesc == true">
+                <textarea [(ngModel)]="singleData.description" cols="30" rows="10"></textarea>
+            </div>
+            this.
+        </div>
+
+        <div *ngIf="(currentRows | filter:search).length <1">
+            Not Found
+        </div>
+
+    </div>
+
+    <div class="table-paginator">
+        <span (click)="getRows(no)" [ngClass]="activePage == no ? 'paginator-number1' : 'paginator-number'" *ngFor="let no of tiles">
+            {{no+1}}
+        </span>
+    </div>
+</div>
