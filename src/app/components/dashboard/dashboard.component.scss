@@ -5,6 +5,14 @@
     font-size: 2vw;
     margin-bottom: 30px;
 }
+.page-header-container{
+    display: flex;
+    justify-content: space-between;
+}
+.page-serch-input{
+    background-color: #fff3ec;
+    border-radius: 5px;
+}
 .page-table{
     font-size: 18px;
     padding: 30px;

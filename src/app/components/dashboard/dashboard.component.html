@@ -1,9 +1,9 @@
 
 <div class="api-page">
-    <div>
+    <div class="page-header-container">
         <div class="page-header">API TABLE DATA</div>
         <div>
-            <input type="search"  [(ngModel)]="search" />
+            <input type="search" class="page-serch-input" [(ngModel)]="search" />
 
             
         </div>
@@ -27,7 +27,7 @@
                 <div style="width: 100px;">{{item.createdAt | date: "mediumDate"}}</div>
                 <div style="width: 100px;">{{item.updatedAt | date: "mediumDate"}}</div>
                 <div>
-                    <button class="table-action-button" (click)="editApiDescription(item)">Delete</button>
+                    <button class="table-action-button" (click)="editApiDescription(item)">Edit</button>
                     <button class="table-action-button" (click)="deleteApiData(item)">Delete</button>
                 </div>
             </div>
@@ -37,7 +37,7 @@
             <div class="table-description" *ngIf="apiDesc == true">
                 <textarea [(ngModel)]="singleData.description" cols="30" rows="10"></textarea>
             </div>
-            this.
+
         </div>
 
         <div *ngIf="(currentRows | filter:search).length <1">
